@@ -15,6 +15,7 @@ public class CarTest {
             int insertCar = sqlSession.insert("insertCar");
             sqlSession.commit();
             System.out.println("insert " + insertCar);
+            System.out.println("test");
         } catch (Exception e) {
             if(sqlSession != null) {
                 sqlSession.rollback();
