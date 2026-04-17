@@ -13,8 +13,7 @@ public class TestCar {
     public void testInsert() {
         SqlSession sqlSession = null;
         try {
-            SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
-            SqlSessionFactory factory = sqlSessionFactoryBuilder.build(Resources.getResourceAsStream("mybatis-config.xml"));
+            SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
             sqlSession = factory.openSession();
             int insertCar = sqlSession.insert("insertCar");
             sqlSession.commit();
